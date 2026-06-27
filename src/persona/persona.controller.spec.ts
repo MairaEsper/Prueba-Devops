@@ -13,7 +13,8 @@ describe('PersonaController', () => {
         nombre: 'Juana',
       rut: '12.345.678-9',
       fechaNacimiento: '10-10-1995',
-      ciudad: 'Coquimbo'
+      ciudad: 'Coquimbo',
+      gustos: ['Bullita', 'Aragorn']
       }
     ]),
     remove: jest.fn(),
@@ -47,7 +48,8 @@ describe('PersonaController', () => {
       nombre: 'Juana',
       rut: '12.345.678-9',
       fechaNacimiento: '10-10-1995',
-      ciudad: 'Coquimbo'
+      ciudad: 'Coquimbo',
+      gustos: ['Bullita', 'Aragorn']
     };
 
     controller.create(dto);
