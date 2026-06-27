@@ -21,7 +21,8 @@ describe('PersonaService', () => {
       nombre: 'Juana',
       rut: '12.345.678-9',
       fechaNacimiento: '10-10-1995',
-      ciudad: 'Coquimbo'
+      ciudad: 'Coquimbo',
+      gustos: ['Bullita', 'Aragorn']
     };
 
     service.create(nuevaPersona);
@@ -41,7 +42,8 @@ describe('PersonaService', () => {
       nombre: 'Juana',
       rut: '12.345.678-9',
       fechaNacimiento: '10-10-1995',
-      ciudad: 'Coquimbo'
+      ciudad: 'Coquimbo',
+      gustos: ['Bullita', 'Aragorn']
     };
 
     service.create(persona);
@@ -56,7 +58,8 @@ describe('PersonaService', () => {
       nombre: 'Juan',
       rut: '21.246.739-7',
       fechaNacimiento: '03-05-2001',
-      ciudad: 'Santiago'
+      ciudad: 'Santiago',
+      gustos: ['Bullita', 'Aragorn']
     };
 
     service.create(persona);

@@ -4,7 +4,8 @@ export interface Persona {
   nombre: string;
   rut: string;
   fechaNacimiento: string;
-  ciudad: string; 
+  ciudad: string;
+  gustos: string[];
 }
 
 @Injectable()
