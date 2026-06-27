@@ -1,29 +1,24 @@
 import { Injectable } from '@nestjs/common';
-
-export interface Persona {
-  nombre: string;
-  rut: string;
-  fechaNacimiento: string;
-  ciudad: string;
-  gustos: string[];
-}
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Persona } from './persona.entity'; 
 
 @Injectable()
 export class PersonaService {
-  private personas: Persona[] = []
+  constructor(
+    @InjectRepository(Persona)
+    private personaRepository: Repository<Persona>,
+  ) {}
 
-  create(persona: Persona) {
-    this.personas.push(persona);
+  async create(persona: Persona): Promise<Persona> {
+    return await this.personaRepository.save(persona);
   }
 
-  findAll() {
-    return this.personas;
+  async findAll(): Promise<Persona[]> {
+    return await this.personaRepository.find();
   }
 
-  remove(rut: string) {
-    const indice = this.personas.findIndex(p => p.rut === rut);
-    if (indice !== -1) {
-      this.personas.splice(indice, 1);
-    }
+  async remove(rut: string): Promise<void> {
+    await this.personaRepository.delete(rut);
   }
 }
